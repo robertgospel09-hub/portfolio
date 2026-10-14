@@ -615,3 +615,19 @@ body.lb-open{overflow:hidden}
 /* logo: black on light headers, lime on dark ones (desktop + phone) */
 .nav:not(.is-dark):not(.m-darknav) .logo{color:var(--ink)}
 @media (min-width:761px){.nav.m-darknav:not(.is-dark) .logo{color:var(--ink)}}
+
+/* ---------- Calendly booking ---------- */
+.bk-sub{font-size:14px;color:var(--muted-dark);margin-top:10px;line-height:1.6}
+.m-bk-sub{margin:-6px 0 16px}
+.bk-btn{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:28px;height:64px;background:var(--lime);color:var(--ink);font-weight:700;font-size:16px;letter-spacing:.06em;border-radius:3px;transition:filter .2s}
+.bk-btn:hover{filter:brightness(.92)}
+.bk-or{display:flex;align-items:center;gap:14px;margin-top:36px;font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--muted-dark)}
+.bk-or::before,.bk-or::after{content:"";flex:1;height:1px;background:var(--line-dark)}
+.form-card .bk-or + .field{margin-top:28px}
+.form-card .btn-lime{background:transparent;color:var(--lime);border:2px solid var(--lime)}
+.form-card .btn-lime:hover{background:var(--lime);color:var(--ink);filter:none}
+@media (max-width:760px){
+  .m-only .form-card .bk-btn{margin-top:0;height:52px;font-size:14px;border-radius:0}
+  .m-only .form-card .bk-or{margin-top:26px}
+  .m-only .form-card .bk-or + .field{margin-top:22px}
+}
