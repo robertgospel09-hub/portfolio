@@ -79,11 +79,16 @@ document.querySelectorAll('.contact-form').forEach(form => {
           _subject: `New portfolio message from ${name}`, _template: 'table', _captcha: 'false' })
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || String(data.success) === 'false') throw new Error(data.message || 'failed');
+      if (!res.ok || String(data.success) === 'false') {
+        const m = data.message || '';
+        if (/activat/i.test(m)) throw new Error('This form is being set up. Please email me at robertgospel09@gmail.com for now.');
+        throw new Error(m || 'failed');
+      }
       form.reset();
       say('Message sent. I\'ll get back to you soon.', 'ok');
     } catch (err) {
-      say('Couldn\'t send right now. Email me at robertgospel09@gmail.com instead.', 'err');
+      console.warn('Contact form:', err.message);
+      say(/set up/.test(err.message) ? err.message : 'Couldn\'t send right now. Email me at robertgospel09@gmail.com instead.', 'err');
     } finally {
       btn.disabled = false; btn.innerHTML = btnHTML;
     }

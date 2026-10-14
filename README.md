@@ -1,4 +1,4 @@
-# Gospel Robert — Portfolio.
+# Gospel Robert — Portfolio
 
 Static site. No build step. Plain HTML, CSS and a little JS.
 
