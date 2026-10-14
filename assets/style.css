@@ -612,3 +612,6 @@ body.lb-open{overflow:hidden}
   .hero2 .hero-name{font-size:min(9.6vw,64px)}
   .h2-photo{margin:54px 8px 0 6px}
 }
+/* logo: black on light headers, lime on dark ones (desktop + phone) */
+.nav:not(.is-dark):not(.m-darknav) .logo{color:var(--ink)}
+@media (min-width:761px){.nav.m-darknav:not(.is-dark) .logo{color:var(--ink)}}
